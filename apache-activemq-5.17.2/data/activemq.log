@@ -1,0 +1,295 @@
+2022-11-15 18:10:49,596 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:10:50,002 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-11-15 18:10:50,161 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-61096-1668546650016-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:10:50,194 | INFO  | Listening for connections at: tcp://DESKTOP-N3P7P7H:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:10:50,195 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,202 | ERROR | Failed to start Apache ActiveMQ (localhost, ID:DESKTOP-N3P7P7H-61096-1668546650016-0:1) | org.apache.activemq.broker.BrokerService | main
+java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:30)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2241)
+	at org.apache.activemq.broker.BrokerService.startTransportConnector(BrokerService.java:2722)
+	at org.apache.activemq.broker.BrokerService.startAllConnectors(BrokerService.java:2618)
+	at org.apache.activemq.broker.BrokerService.doStartBroker(BrokerService.java:757)
+	at org.apache.activemq.broker.BrokerService.startBroker(BrokerService.java:719)
+	at org.apache.activemq.broker.BrokerService.start(BrokerService.java:622)
+	at org.apache.activemq.xbean.XBeanBrokerService.afterPropertiesSet(XBeanBrokerService.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1930)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1872)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:64)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:52)
+	at org.apache.activemq.xbean.XBeanBrokerFactory$1.<init>(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createBroker(XBeanBrokerFactory.java:67)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:71)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:54)
+	at org.apache.activemq.console.command.StartCommand.runTask(StartCommand.java:87)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.runTask(ShellCommand.java:154)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.main(ShellCommand.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.activemq.console.Main.runTaskClass(Main.java:262)
+	at org.apache.activemq.console.Main.main(Main.java:115)
+Caused by: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:36)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:146)
+	at org.apache.activemq.transport.tcp.TcpTransportFactory.doBind(TcpTransportFactory.java:62)
+	at org.apache.activemq.transport.TransportFactorySupport.bind(TransportFactorySupport.java:40)
+	at org.apache.activemq.broker.TransportConnector.createTransportServer(TransportConnector.java:336)
+	at org.apache.activemq.broker.TransportConnector.getServer(TransportConnector.java:146)
+	at org.apache.activemq.broker.TransportConnector.asManagedConnector(TransportConnector.java:111)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2236)
+	... 40 more
+Caused by: java.net.BindException: Address already in use: NET_Bind
+	at java.base/java.net.PlainSocketImpl.bind0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketBind(PlainSocketImpl.java:132)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:452)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:381)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:243)
+	at java.base/javax.net.DefaultServerSocketFactory.createServerSocket(ServerSocketFactory.java:231)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:143)
+	... 46 more
+2022-11-15 18:10:50,237 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-61096-1668546650016-0:1) is shutting down | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:10:50,239 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 18:10:50,240 | INFO  | Could not accept connection during shutdown  : null (null) | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 18:10:50,240 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,247 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,247 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,248 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,248 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:10:50,253 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-11-15 18:10:50,253 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:10:50,255 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:10:50,257 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:10:50,300 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-61096-1668546650016-0:1) uptime 0.724 seconds | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:10:50,300 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-61096-1668546650016-0:1) is shutdown | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:10:50,307 | WARN  | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.activemq.xbean.XBeanBrokerService#0' defined in class path resource [activemq.xml]: Invocation of init method failed; nested exception is java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2022-11-15 18:18:20,255 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:18:20,354 | INFO  | KahaDB is version 7 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2022-11-15 18:18:20,522 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-11-15 18:18:20,687 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51054-1668547100541-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:18:20,715 | INFO  | Listening for connections at: tcp://DESKTOP-N3P7P7H:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:18:20,717 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,723 | ERROR | Failed to start Apache ActiveMQ (localhost, ID:DESKTOP-N3P7P7H-51054-1668547100541-0:1) | org.apache.activemq.broker.BrokerService | main
+java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:30)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2241)
+	at org.apache.activemq.broker.BrokerService.startTransportConnector(BrokerService.java:2722)
+	at org.apache.activemq.broker.BrokerService.startAllConnectors(BrokerService.java:2618)
+	at org.apache.activemq.broker.BrokerService.doStartBroker(BrokerService.java:757)
+	at org.apache.activemq.broker.BrokerService.startBroker(BrokerService.java:719)
+	at org.apache.activemq.broker.BrokerService.start(BrokerService.java:622)
+	at org.apache.activemq.xbean.XBeanBrokerService.afterPropertiesSet(XBeanBrokerService.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeCustomInitMethod(AbstractAutowireCapableBeanFactory.java:1930)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1872)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:64)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:52)
+	at org.apache.activemq.xbean.XBeanBrokerFactory$1.<init>(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createBroker(XBeanBrokerFactory.java:67)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:71)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:54)
+	at org.apache.activemq.console.command.StartCommand.runTask(StartCommand.java:87)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.runTask(ShellCommand.java:154)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.main(ShellCommand.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.activemq.console.Main.runTaskClass(Main.java:262)
+	at org.apache.activemq.console.Main.main(Main.java:115)
+Caused by: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind
+	at org.apache.activemq.util.IOExceptionSupport.create(IOExceptionSupport.java:36)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:146)
+	at org.apache.activemq.transport.tcp.TcpTransportFactory.doBind(TcpTransportFactory.java:62)
+	at org.apache.activemq.transport.TransportFactorySupport.bind(TransportFactorySupport.java:40)
+	at org.apache.activemq.broker.TransportConnector.createTransportServer(TransportConnector.java:336)
+	at org.apache.activemq.broker.TransportConnector.getServer(TransportConnector.java:146)
+	at org.apache.activemq.broker.TransportConnector.asManagedConnector(TransportConnector.java:111)
+	at org.apache.activemq.broker.BrokerService.registerConnectorMBean(BrokerService.java:2236)
+	... 40 more
+Caused by: java.net.BindException: Address already in use: NET_Bind
+	at java.base/java.net.PlainSocketImpl.bind0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketBind(PlainSocketImpl.java:132)
+	at java.base/java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:452)
+	at java.base/java.net.ServerSocket.bind(ServerSocket.java:381)
+	at java.base/java.net.ServerSocket.<init>(ServerSocket.java:243)
+	at java.base/javax.net.DefaultServerSocketFactory.createServerSocket(ServerSocketFactory.java:231)
+	at org.apache.activemq.transport.tcp.TcpTransportServer.bind(TcpTransportServer.java:143)
+	... 46 more
+2022-11-15 18:18:20,743 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51054-1668547100541-0:1) is shutting down | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:18:20,744 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,744 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 18:18:20,745 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,745 | INFO  | Could not accept connection during shutdown  : null (null) | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 18:18:20,745 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,746 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,746 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:18:20,750 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-11-15 18:18:20,750 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:18:20,750 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:18:20,753 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | main
+2022-11-15 18:18:20,773 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51054-1668547100541-0:1) uptime 0.536 seconds | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:18:20,774 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51054-1668547100541-0:1) is shutdown | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:18:20,778 | WARN  | Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.apache.activemq.xbean.XBeanBrokerService#0' defined in class path resource [activemq.xml]: Invocation of init method failed; nested exception is java.io.IOException: Transport Connector could not be registered in JMX: java.io.IOException: Failed to bind to server socket: amqp://0.0.0.0:5672?maximumConnections=1000&wireFormat.maxFrameSize=104857600 due to: java.net.BindException: Address already in use: NET_Bind | org.apache.activemq.xbean.XBeanBrokerFactory$1 | main
+2022-11-15 18:19:39,565 | INFO  | Using Persistence Adapter: KahaDBPersistenceAdapter[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\kahadb] | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:39,653 | INFO  | KahaDB is version 7 | org.apache.activemq.store.kahadb.MessageDatabase | main
+2022-11-15 18:19:39,822 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] started | org.apache.activemq.store.kahadb.plist.PListStoreImpl | main
+2022-11-15 18:19:39,981 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51079-1668547179838-0:1) is starting | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:40,011 | INFO  | Listening for connections at: tcp://DESKTOP-N3P7P7H:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:19:40,012 | INFO  | Connector openwire started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:19:40,019 | INFO  | Listening for connections at: amqp://DESKTOP-N3P7P7H:5673?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:19:40,020 | INFO  | Connector amqp started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:19:40,030 | INFO  | Listening for connections at: stomp://DESKTOP-N3P7P7H:61613?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:19:40,035 | INFO  | Connector stomp started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:19:40,042 | INFO  | Listening for connections at: mqtt://DESKTOP-N3P7P7H:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.TransportServerThreadSupport | main
+2022-11-15 18:19:40,046 | INFO  | Connector mqtt started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:19:40,054 | INFO  | Starting Jetty server | org.apache.activemq.transport.WebTransportServerSupport | main
+2022-11-15 18:19:40,163 | INFO  | Creating Jetty connector | org.apache.activemq.transport.WebTransportServerSupport | main
+2022-11-15 18:19:40,260 | WARN  | ServletContext@o.e.j.s.ServletContextHandler@2f0bfe17{/,null,STARTING} has uncovered http methods for path: / | org.eclipse.jetty.security.SecurityHandler | main
+2022-11-15 18:19:40,382 | INFO  | Listening for connections at ws://DESKTOP-N3P7P7H:61614?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.transport.ws.WSTransportServer | main
+2022-11-15 18:19:40,382 | INFO  | Connector ws started | org.apache.activemq.broker.TransportConnector | main
+2022-11-15 18:19:40,382 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51079-1668547179838-0:1) started | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:40,382 | INFO  | For help or more information please see: http://activemq.apache.org | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:40,398 | WARN  | Store limit is 102400 mb (current store usage is 0 mb). The data directory: C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\kahadb only has 38136 mb of usable space. - resetting to maximum available disk space: 38136 mb | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:40,401 | WARN  | Temporary Store limit is 51200 mb (current store usage is 0 mb). The data directory: C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data only has 38136 mb of usable space. - resetting to maximum available disk space: 38136 mb | org.apache.activemq.broker.BrokerService | main
+2022-11-15 18:19:41,173 | INFO  | ActiveMQ WebConsole available at http://127.0.0.1:8161/ | org.apache.activemq.web.WebConsoleStarter | main
+2022-11-15 18:19:41,174 | INFO  | ActiveMQ Jolokia REST API available at http://127.0.0.1:8161/api/jolokia/ | org.apache.activemq.web.WebConsoleStarter | main
+2022-11-15 18:19:41,745 | WARN  | jolokia-agent: Error while accessing access restrictor at file:C:UsersarielOneDriveUSM2022-2TPStompapache-activemq-5.17.2bin..conf/jolokia-access.xml. Denying all access to MBeans for security reasons. Exception: java.io.FileNotFoundException: C:UsersarielOneDriveUSM2022-2TPStompapache-activemq-5.17.2bin..conf\jolokia-access.xml (El sistema no puede encontrar la ruta especificada) | org.eclipse.jetty.server.handler.ContextHandler.api | main
+java.io.FileNotFoundException: C:UsersarielOneDriveUSM2022-2TPStompapache-activemq-5.17.2bin..conf\jolokia-access.xml (El sistema no puede encontrar la ruta especificada)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(FileInputStream.java:219)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:157)
+	at java.base/java.io.FileInputStream.<init>(FileInputStream.java:112)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:86)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:184)
+	at java.base/java.net.URL.openStream(URL.java:1165)
+	at org.jolokia.restrictor.RestrictorFactory.lookupPolicyRestrictor(RestrictorFactory.java:119)
+	at org.jolokia.restrictor.RestrictorFactory.createRestrictor(RestrictorFactory.java:50)
+	at org.jolokia.http.AgentServlet.createRestrictor(AgentServlet.java:195)
+	at org.jolokia.http.AgentServlet.init(AgentServlet.java:135)
+	at org.eclipse.jetty.servlet.ServletHolder$Wrapper.init(ServletHolder.java:1345)
+	at org.eclipse.jetty.servlet.ServletHolder.initServlet(ServletHolder.java:632)
+	at org.eclipse.jetty.servlet.ServletHolder.initialize(ServletHolder.java:415)
+	at org.eclipse.jetty.servlet.ServletHandler.lambda$initialize$0(ServletHandler.java:750)
+	at java.base/java.util.stream.SortedOps$SizedRefSortingSink.end(SortedOps.java:357)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:485)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:474)
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:312)
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:658)
+	at org.eclipse.jetty.servlet.ServletHandler.initialize(ServletHandler.java:774)
+	at org.eclipse.jetty.servlet.ServletContextHandler.startContext(ServletContextHandler.java:379)
+	at org.eclipse.jetty.webapp.WebAppContext.startWebapp(WebAppContext.java:1449)
+	at org.eclipse.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1414)
+	at org.eclipse.jetty.server.handler.ContextHandler.doStart(ContextHandler.java:916)
+	at org.eclipse.jetty.servlet.ServletContextHandler.doStart(ServletContextHandler.java:288)
+	at org.eclipse.jetty.webapp.WebAppContext.doStart(WebAppContext.java:524)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:169)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:97)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:169)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:110)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:97)
+	at org.eclipse.jetty.security.SecurityHandler.doStart(SecurityHandler.java:411)
+	at org.eclipse.jetty.security.ConstraintSecurityHandler.doStart(ConstraintSecurityHandler.java:417)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:169)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:117)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:97)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.start(ContainerLifeCycle.java:169)
+	at org.eclipse.jetty.server.Server.start(Server.java:423)
+	at org.eclipse.jetty.util.component.ContainerLifeCycle.doStart(ContainerLifeCycle.java:110)
+	at org.eclipse.jetty.server.handler.AbstractHandler.doStart(AbstractHandler.java:97)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:387)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:73)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.MethodInvoker.invoke(MethodInvoker.java:283)
+	at org.springframework.beans.factory.config.MethodInvokingBean.invokeWithTargetException(MethodInvokingBean.java:123)
+	at org.springframework.beans.factory.config.MethodInvokingFactoryBean.afterPropertiesSet(MethodInvokingFactoryBean.java:108)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:936)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:64)
+	at org.apache.xbean.spring.context.ResourceXmlApplicationContext.<init>(ResourceXmlApplicationContext.java:52)
+	at org.apache.activemq.xbean.XBeanBrokerFactory$1.<init>(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createApplicationContext(XBeanBrokerFactory.java:104)
+	at org.apache.activemq.xbean.XBeanBrokerFactory.createBroker(XBeanBrokerFactory.java:67)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:71)
+	at org.apache.activemq.broker.BrokerFactory.createBroker(BrokerFactory.java:54)
+	at org.apache.activemq.console.command.StartCommand.runTask(StartCommand.java:87)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.runTask(ShellCommand.java:154)
+	at org.apache.activemq.console.command.AbstractCommand.execute(AbstractCommand.java:63)
+	at org.apache.activemq.console.command.ShellCommand.main(ShellCommand.java:104)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.apache.activemq.console.Main.runTaskClass(Main.java:262)
+	at org.apache.activemq.console.Main.main(Main.java:115)
+2022-11-15 18:22:54,832 | WARN  | Transport Connection to: tcp://0:0:0:0:0:0:0:1:51168 failed: Frame size of 1 GB larger than max allowed 100 MB | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///0:0:0:0:0:0:0:1:51168@61616
+2022-11-15 18:24:54,489 | WARN  | Transport Connection to: tcp://0:0:0:0:0:0:0:1:51259 failed: Frame size of 1 GB larger than max allowed 100 MB | org.apache.activemq.broker.TransportConnection.Transport | ActiveMQ Transport: tcp:///0:0:0:0:0:0:0:1:51259@61616
+2022-11-15 20:27:05,079 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51079-1668547179838-0:1) is shutting down | org.apache.activemq.broker.BrokerService | Thread-20
+2022-11-15 20:27:05,135 | INFO  | Connector openwire stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2022-11-15 20:27:05,135 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 20:27:05,137 | INFO  | Connector amqp stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2022-11-15 20:27:05,137 | INFO  | Could not accept connection during shutdown  : null (null) | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: tcp://0.0.0.0:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 20:27:05,148 | INFO  | Connector stomp stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2022-11-15 20:27:05,150 | INFO  | Connector mqtt stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2022-11-15 20:27:05,150 | INFO  | socketQueue interrupted - stopping | org.apache.activemq.transport.tcp.TcpTransportServer | ActiveMQ Transport Server Thread Handler: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 20:27:05,151 | INFO  | Could not accept connection during shutdown  : null (null) | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport Server Thread Handler: mqtt://0.0.0.0:1883?maximumConnections=1000&wireFormat.maxFrameSize=104857600
+2022-11-15 20:27:05,318 | INFO  | Connector ws stopped | org.apache.activemq.broker.TransportConnector | Thread-20
+2022-11-15 20:27:05,350 | INFO  | PListStore:[C:\Users\ariel\OneDrive\USM\2022-2\TP\Stomp\apache-activemq-5.17.2\bin\..\data\localhost\tmp_storage] stopped | org.apache.activemq.store.kahadb.plist.PListStoreImpl | Thread-20
+2022-11-15 20:27:05,351 | INFO  | Stopping async queue tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2022-11-15 20:27:05,352 | INFO  | Stopping async topic tasks | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2022-11-15 20:27:05,353 | INFO  | Stopped KahaDB | org.apache.activemq.store.kahadb.KahaDBStore | Thread-20
+2022-11-15 20:27:05,394 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51079-1668547179838-0:1) uptime 2 hours 7 minutes | org.apache.activemq.broker.BrokerService | Thread-20
+2022-11-15 20:27:05,395 | INFO  | Apache ActiveMQ 5.17.2 (localhost, ID:DESKTOP-N3P7P7H-51079-1668547179838-0:1) is shutdown | org.apache.activemq.broker.BrokerService | Thread-20
